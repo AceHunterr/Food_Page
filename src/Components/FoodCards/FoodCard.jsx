@@ -6,7 +6,7 @@ import "./FoodCard.css";
 const FoodCard = (props) => {
   const navigate = useNavigate();
   const navigatetoJobDetails = () => {
-    navigate("/job-details", { state: { jobProps: props } });
+    navigate("/food-details", { state: { jobProps: props } });
   };
 
   const navigatetoTagsPage = () => {
