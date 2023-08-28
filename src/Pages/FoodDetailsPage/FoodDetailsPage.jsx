@@ -28,10 +28,9 @@ const FoodDetailsPage = () => {
 
   return (
     <div>
-      {" "}
       <div className="job-detail-header-div">
         <span className={`${customClassName}_detail  job-detail-heading`}>
-          {jobProps.company}
+          {jobProps.food_type}
         </span>
       </div>
       <br />
@@ -45,13 +44,13 @@ const FoodDetailsPage = () => {
         </div>
 
         <div className="content">
-          <h2 className="job-heading">{jobProps.job_title}</h2>
+          <h2 className="job-heading">{jobProps.food_title}</h2>
           <div className="row">
             <div className="item">{jobProps.mode}</div>
             <div className="dot"></div>
-            <div className="item">{jobProps.location}</div>
+            <div className="item">{jobProps.portion}</div>
             <div className="dot"></div>
-            <div className="item">{jobProps.days}</div>
+            <div className="item">{jobProps.type}</div>
           </div>
         </div>
       </div>
@@ -59,13 +58,13 @@ const FoodDetailsPage = () => {
         <div className="item">
           {/* <img src={salaryImg} alt="salary-img" className="icon-img" /> */}
           <h4 className="icon-text">Salary</h4>
-          <h4 className="icon-value">{jobProps.salary}</h4>
+          <h4 className="icon-value">{jobProps.price}</h4>
         </div>
 
         <div class="item" style={{ marginLeft: "10px" }}>
           {/* <img src={jobTypeImg} alt="salary-img" className="icon-img" /> */}
           <h4 className="icon-text">Job Type</h4>
-          <h4 className="icon-value">{jobProps.job_type}</h4>
+          <h4 className="icon-value">{jobProps.food_type}</h4>
         </div>
 
         <div class="item">
