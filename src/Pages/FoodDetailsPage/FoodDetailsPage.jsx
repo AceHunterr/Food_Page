@@ -1,7 +1,8 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import "./FoodDetailsPage.css";
-
+import { Box } from "@mui/material";
+import Sidenav from "../../Components/sidenav";
 import myImg from "../../static/images/img.jpg";
 import salaryImg from "../../static/images/salary_icon.png";
 import jobTypeImg from "../../static/images/job_type_icon.png";
@@ -23,77 +24,83 @@ const FoodDetailsPage = () => {
     type: "veg",
     price: "100",
     food_type: "Indian",
+    work_type: "work_type_job",
   };
   const customClassName = jobProps.work_type;
 
   return (
-    <div>
-      <div className="job-detail-header-div">
-        <span className={`${customClassName}_detail  job-detail-heading`}>
-          {jobProps.food_title}
-        </span>
-      </div>
-      <br />
-      <br />
-      <br />
-      <div className="job-detail-card">
-        <div className="imgbox">
-          <div className="square-content">
-            <img src={jobProps.image} alt="Logo" />
+    <Box sx={{ display: "flex" }}>
+      <Sidenav />
+      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+        <div>
+          <div className="job-detail-header-div">
+            <span className={`${customClassName}_detail  job-detail-heading`}>
+              {jobProps.food_title}
+            </span>
+          </div>
+          <br />
+          <br />
+          <br />
+          <div className="job-detail-card">
+            <div className="imgbox">
+              <div className="square-content">
+                <img src={jobProps.image} alt="Logo" />
+              </div>
+            </div>
+            {/* <h1>{jobProps.preparation_time}</h1> */}
+
+            <div className="content">
+              <h2
+                className="job-heading"
+                style={{ padding: "0", fontSize: "3rem", fontWeight: "900" }}
+              >
+                {jobProps.food_title}
+              </h2>
+              <h2 className="job-heading">{jobProps.food_type}</h2>
+              <div className="row">
+                <div className="item">{jobProps.mode}</div>
+                <div className="dot"></div>
+                <div className="item">{jobProps.portion}</div>
+                <div className="dot"></div>
+                <div className="item">{jobProps.type}</div>
+                <br />
+                <br />
+                <br />
+              </div>
+            </div>
+          </div>
+          <div className="icons-row">
+            <div className="item">
+              <img src={salaryImg} alt="salary-img" className="icon-img" />
+              <h4 className="icon-text">Price</h4>
+              <h4 className="icon-value">{jobProps.price}</h4>
+            </div>
+
+            <div class="item" style={{ marginLeft: "10px" }}>
+              <img src={jobTypeImg} alt="salary-img" className="icon-img" />
+              <h4 className="icon-text">Preparation Time</h4>
+              <h4 className="icon-value">{jobProps.preparation_time}</h4>
+            </div>
+
+            <div class="item">
+              <img src={positionImg} alt="salary-img" className="icon-img" />
+              <h4 className="icon-text">Size</h4>
+              <h4 className="icon-value">{jobProps.portion}</h4>
+            </div>
+          </div>
+          <div className="job-details-description">
+            <h2 className="heading">Description</h2>
+            <p className="content">{jobProps.description}</p>
+          </div>
+          <div className="apply-now-div">
+            <button className={`${customClassName}_button  apply-now`}>
+              Buy/Order Now
+            </button>
+            {/* <button className='apply-now'>Apply Now</button> */}
           </div>
         </div>
-        {/* <h1>{jobProps.preparation_time}</h1> */}
-
-        <div className="content">
-          <h2
-            className="job-heading"
-            style={{ padding: "0", fontSize: "3rem", fontWeight: "900" }}
-          >
-            {jobProps.food_title}
-          </h2>
-          <h2 className="job-heading">{jobProps.food_type}</h2>
-          <div className="row">
-            <div className="item">{jobProps.mode}</div>
-            <div className="dot"></div>
-            <div className="item">{jobProps.portion}</div>
-            <div className="dot"></div>
-            <div className="item">{jobProps.type}</div>
-            <br />
-            <br />
-            <br />
-          </div>
-        </div>
-      </div>
-      <div className="icons-row">
-        <div className="item">
-          <img src={salaryImg} alt="salary-img" className="icon-img" />
-          <h4 className="icon-text">Price</h4>
-          <h4 className="icon-value">{jobProps.price}</h4>
-        </div>
-
-        <div class="item" style={{ marginLeft: "10px" }}>
-          <img src={jobTypeImg} alt="salary-img" className="icon-img" />
-          <h4 className="icon-text">Preparation Time</h4>
-          <h4 className="icon-value">{jobProps.preparation_time}</h4>
-        </div>
-
-        <div class="item">
-          <img src={positionImg} alt="salary-img" className="icon-img" />
-          <h4 className="icon-text">Size</h4>
-          <h4 className="icon-value">{jobProps.portion}</h4>
-        </div>
-      </div>
-      <div className="job-details-description">
-        <h2 className="heading">Description</h2>
-        <p className="content">{jobProps.description}</p>
-      </div>
-      <div className="apply-now-div">
-        <button className={`${customClassName}_button  apply-now`}>
-          Buy/Order Now
-        </button>
-        {/* <button className='apply-now'>Apply Now</button> */}
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };
 

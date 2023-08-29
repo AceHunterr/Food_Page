@@ -16,7 +16,11 @@ const FoodCard = (props) => {
   const customClassName = props.work_type;
   return (
     <div className="jobList">
-      <div key={props.id} className={`${customClassName} jobCard`}>
+      <div
+        key={props.id}
+        className={`${customClassName} jobCard`}
+        onClick={navigatetoJobDetails}
+      >
         <div className="jobCard__content">
           <div className="jobCard__header" onClick={navigatetoJobDetails}>
             <img src={props.image} alt="job-img" className="jobImage" />
@@ -31,7 +35,7 @@ const FoodCard = (props) => {
                 <span
                   key={index}
                   className="tagItem"
-                  onClick={navigatetoTagsPage}
+                  // onClick={navigatetoTagsPage}
                 >
                   {tag}
                 </span>

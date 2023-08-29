@@ -3,6 +3,7 @@ import FoodCard from "../../Components/FoodCards/FoodCard";
 import foodData from "../../Data/FoodContent";
 import { Box } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
+import Sidenav from "../../Components/sidenav";
 
 const FoodCardsPage = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -29,6 +30,7 @@ const FoodCardsPage = () => {
 
   return (
     <Box sx={{ display: "flex" }}>
+      <Sidenav />
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <div>
           <div className="job-detail-header-div">

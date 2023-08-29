@@ -87,9 +87,11 @@
 }
 
 .jobImage {
-  max-width: 25%;
-  height: auto;
-  margin-right: 1rem;
+  width: 10rem;
+  height: 10rem;
+  /* height: 150px; */
+  /* width: 150px; */
+  margin-right: 5rem;
   border-radius: 100%;
 }
 
