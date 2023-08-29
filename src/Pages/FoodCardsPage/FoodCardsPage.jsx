@@ -27,6 +27,7 @@ const FoodCardsPage = () => {
 
     setFilteredJobs(filtered);
   };
+  // console.log()
 
   return (
     <Box sx={{ display: "flex" }}>
@@ -41,7 +42,7 @@ const FoodCardsPage = () => {
               type="text"
               value={searchQuery}
               onChange={handleSearch}
-              placeholder="Search jobs..."
+              placeholder="Search food..."
             />
 
             <SearchIcon className="search-icon" />
@@ -56,25 +57,29 @@ const FoodCardsPage = () => {
             }}
           >
             {filteredJobs.map((contents) => (
-              <FoodCard
-                key={contents.id}
-                image={contents.image}
-                food_title={contents.food_title}
-                // company={contents.company}
-                // view={contents.view}
-                // share={contents.share}
-                tags={contents.tags}
-                description={contents.description}
-                mode={contents.mode}
-                portion={contents.portion}
-                type={contents.type}
-                price={contents.price}
-                food_type={contents.food_type}
-                // position={contents.position}
-                work_type="work_type_job"
-                // onSaveCard={handleSaveCard}
-                style={{ flex: "1 10 50%", maxWidth: "50%" }}
-              />
+              <>
+                {/* <h1>{contents.preparation_time}</h1> */}
+                <FoodCard
+                  key={contents.id}
+                  image={contents.image}
+                  food_title={contents.food_title}
+                  // company={contents.company}
+                  // view={contents.view}
+                  // share={contents.share}
+                  tags={contents.tags}
+                  preparation_time={contents.preparation_time}
+                  description={contents.description}
+                  mode={contents.mode}
+                  portion={contents.portion}
+                  type={contents.type}
+                  price={contents.price}
+                  food_type={contents.food_type}
+                  // position={contents.position}
+                  work_type="work_type_job"
+                  // onSaveCard={handleSaveCard}
+                  style={{ flex: "1 10 50%", maxWidth: "50%" }}
+                />
+              </>
             ))}
           </div>
 
