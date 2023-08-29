@@ -13,13 +13,11 @@ const FoodCardsPage = () => {
     setSearchQuery(value);
 
     const filtered = foodData.filter((job) => {
-      const titleMatch = job.job_title
+      const titleMatch = job.food_title
         .toLowerCase()
         .includes(value.toLowerCase());
-      const companyMatch = job.company
-        .toLowerCase()
-        .includes(value.toLowerCase());
-      const locationMatch = job.location
+      const companyMatch = job.type.toLowerCase().includes(value.toLowerCase());
+      const locationMatch = job.price
         .toLowerCase()
         .includes(value.toLowerCase());
       return titleMatch || companyMatch || locationMatch;
